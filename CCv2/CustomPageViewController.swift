@@ -33,18 +33,21 @@ class CustomPageViewController: UIPageViewController {
     }
 
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newColoredViewController(color: "Green"),
-                self.newColoredViewController(color: "Red"),
-                self.newColoredViewController(color: "Blue")]
+        var controllerList = [UIViewController]()
+        for index in 1...4{
+            controllerList.append(self.newNumberedViewController(number: String(index)))
+        }
+        return controllerList
     }()
 
-    private func newColoredViewController(color: String) -> UIViewController {
+    private func newNumberedViewController(number: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil) .
-            instantiateViewController(withIdentifier: "\(color)ViewController")
+            instantiateViewController(withIdentifier: "ViewController\(number)")
     }
     
    
 }
+
     
 extension CustomPageViewController: UIPageViewControllerDataSource {
     
