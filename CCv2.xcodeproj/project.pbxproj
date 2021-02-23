@@ -14,6 +14,7 @@
 		CD64CE8125CCDD9A0009A51F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD64CE7F25CCDD9A0009A51F /* LaunchScreen.storyboard */; };
 		CD64CE8B25CCE3EC0009A51F /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD64CE8A25CCE3EC0009A51F /* CustomPageViewController.swift */; };
 		CDABCC9525D5789A00C39432 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDABCC9425D5789A00C39432 /* ViewController.swift */; };
+		CDBA542D25E593D700B5B469 /* CharacterStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBA542C25E593D700B5B469 /* CharacterStructure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CD64CE8225CCDD9A0009A51F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD64CE8A25CCE3EC0009A51F /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		CDABCC9425D5789A00C39432 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CDBA542C25E593D700B5B469 /* CharacterStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStructure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				CD64CE8225CCDD9A0009A51F /* Info.plist */,
 				CD64CE8A25CCE3EC0009A51F /* CustomPageViewController.swift */,
 				CDABCC9425D5789A00C39432 /* ViewController.swift */,
+				CDBA542C25E593D700B5B469 /* CharacterStructure.swift */,
 			);
 			path = CCv2;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				CD64CE7525CCDD950009A51F /* AppDelegate.swift in Sources */,
 				CD64CE7725CCDD950009A51F /* SceneDelegate.swift in Sources */,
 				CDABCC9525D5789A00C39432 /* ViewController.swift in Sources */,
+				CDBA542D25E593D700B5B469 /* CharacterStructure.swift in Sources */,
 				CD64CE8B25CCE3EC0009A51F /* CustomPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
