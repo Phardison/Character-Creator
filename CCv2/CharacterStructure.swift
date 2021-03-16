@@ -6,11 +6,11 @@
 //
 
 import Foundation
-struct Character {
-    var name: String
-    var race: String
-    var background: String
-    var Cclass: String
+class Character {
+    var name: String = "nil"
+    var race: String = "nil"
+    var background: String = "nil"
+    var Cclass: String = "nil"
     var stats = [
         "str" : 0,
         "dex" : 0,
@@ -19,4 +19,7 @@ struct Character {
         "wis" : 0,
         "cha" : 0
     ]
+   
 }
+
+
