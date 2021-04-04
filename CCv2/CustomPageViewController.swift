@@ -25,7 +25,7 @@ class CustomPageViewController: UIPageViewController {
 
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         var controllerList = [UIViewController]()
-        for index in 1...4{
+        for index in 1...6{
             controllerList.append(self.newNumberedViewController(number: String(index)))
         }
         return controllerList

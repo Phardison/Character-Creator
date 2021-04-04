@@ -12,24 +12,23 @@ var myCharacter = Character()
 class ViewController: UIViewController {
     
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "oldPageTexture.png")!)
         // Do any additional setup after loading the view.
+        
+        
     }
-    
     
      
     //PAGE 2
     @IBOutlet weak var raceLabel: UILabel!
-    var raceIndex = 0
+    var raceIndex = -1
     
     let raceData = ["Dragonborn", "Dwarf", "Elf", "High Elf", "Drow", "Gnome", "Half-elf", "Halfling", "Half-Orc", "Human", "Tiefling"]
     
     @IBAction func raceLeft(_ sender: Any) {
-        if raceIndex == 0 {
+        if raceIndex == 0 || raceIndex == -1 {
             raceIndex = raceData.count - 1
         } else {
             raceIndex -= 1
@@ -38,7 +37,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func raceRight(_ sender: Any) {
-        if raceIndex == raceData.count - 1 {
+        if raceIndex == raceData.count - 1 || raceIndex == -1 {
             raceIndex = 0
         } else {
             raceIndex += 1
@@ -49,18 +48,18 @@ class ViewController: UIViewController {
     func updateRace() {
         myCharacter.race = raceData[raceIndex]
         self.raceLabel.text = myCharacter.race
+        //updateCharSheet()
     }
     
     //PAGE 3
     
     @IBOutlet weak var classLabel: UILabel!
-    var classSelected = "Barbarian"
-    var classIndex = 0
+    var classIndex = -1
     
     let classData = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Wizard", "Warlock"]
     
     @IBAction func classLeft(_ sender: Any) {
-        if classIndex == 0 {
+        if classIndex == 0 || classIndex == -1 {
             classIndex = classData.count - 1
         } else {
             classIndex -= 1
@@ -69,7 +68,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func classRight(_ sender: Any) {
-        if classIndex == classData.count - 1 {
+        if classIndex == classData.count - 1 || classIndex == -1 {
             classIndex = 0
         } else {
             classIndex += 1
@@ -81,6 +80,7 @@ class ViewController: UIViewController {
     func updateClass() {
         myCharacter.Cclass = classData[classIndex]
         self.classLabel.text = myCharacter.Cclass
+        //updateCharSheet()
     }
 
     //PAGE 4
@@ -111,6 +111,34 @@ class ViewController: UIViewController {
         totalLabel.text = String(sumTop - (resultArray.min()!))
     }
     
+    //PAGE 5
+    
+    //PAGE 6
+    @IBOutlet weak var strSave: UILabel!
+    @IBOutlet weak var dexSave: UILabel!
+    @IBOutlet weak var conSave: UILabel!
+    @IBOutlet weak var intSave: UILabel!
+    @IBOutlet weak var wisSave: UILabel!
+    @IBOutlet weak var chaSave: UILabel!
+    
+    
+    
+    
+    /*
+    Barbarian: Str, Con
+    Bard: Dex, Cha
+    Cleric: Wis, Cha
+    Druid: Int, Wis
+    Fighter: Str, Con
+    Monk: Str, Dex
+    Paladin: Wis, Cha
+    Ranger: Str, Dex
+    Rogue: Dex, Int
+    Sorcerer: Con, Cha
+    Warlock: Wis, Cha
+    Wizard: Int, Wis
+    */
+    
     //MISC
     
     func rollD1() -> Int {
@@ -119,17 +147,69 @@ class ViewController: UIViewController {
     }
     
     
-    @IBOutlet weak var classtest: UILabel!
-    @IBOutlet weak var racetest: UILabel!
+    @IBOutlet weak var sheetRace: UILabel!
+    @IBOutlet weak var sheetClass: UILabel!
     
-   
-    
-    @IBAction func bullshit2(_ sender: Any) {
-        self.classtest.text = myCharacter.Cclass
-        self.racetest.text = myCharacter.race
+    @IBAction func test(_ sender: Any) {
+        updateCharSheet()
     }
     
     
+    func updateCharSheet() {
+        //class and race
+        self.sheetClass.text = myCharacter.Cclass + " - 0"
+        self.sheetRace.text = myCharacter.race
+        
+        //saving throws
+        self.strSave.text = " "
+        self.dexSave.text = " "
+        self.conSave.text = " "
+        self.intSave.text = " "
+        self.wisSave.text = " "
+        self.chaSave.text = " "
+        
+        if myCharacter.Cclass == "Barbarian" {
+            self.strSave.text = "X"
+            self.conSave.text = "X"
+        } else if myCharacter.Cclass == "Bard" {
+            self.dexSave.text = "X"
+            self.chaSave.text = "X"
+        } else if myCharacter.Cclass == "Cleric" {
+            self.wisSave.text = "X"
+            self.chaSave.text = "X"
+        } else if myCharacter.Cclass == "Druid" {
+            self.intSave.text = "X"
+            self.wisSave.text = "X"
+        } else if myCharacter.Cclass == "Fighter" {
+            self.strSave.text = "X"
+            self.conSave.text = "X"
+        } else if myCharacter.Cclass == "Monk" {
+            self.strSave.text = "X"
+            self.dexSave.text = "X"
+        } else if myCharacter.Cclass == "Paladin" {
+            self.wisSave.text = "X"
+            self.chaSave.text = "X"
+        } else if myCharacter.Cclass == "Ranger" {
+            self.dexSave.text = "X"
+            self.intSave.text = "X"
+        } else if myCharacter.Cclass == "Rogue" {
+            self.dexSave.text = "X"
+            self.intSave.text = "X"
+        } else if myCharacter.Cclass == "Sorcerer" {
+            self.conSave.text = "X"
+            self.chaSave.text = "X"
+        } else if myCharacter.Cclass == "Warlock" {
+            self.wisSave.text = "X"
+            self.chaSave.text = "X"
+        } else if myCharacter.Cclass == "Wizard" {
+            self.intSave.text = "X"
+            self.wisSave.text = "X"
+        }
+        
+    }
+   
+    
+
     /*
     // MARK: - Navigation
 
