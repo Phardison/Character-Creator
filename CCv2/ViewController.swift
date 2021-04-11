@@ -111,6 +111,28 @@ class ViewController: UIViewController {
         totalLabel.text = String(sumTop - (resultArray.min()!))
     }
     
+    
+    @IBAction func statUpdate(_ sender: Any) {
+        myCharacter.stats["str"] = Int(strInput.text!)
+        myCharacter.stats["dex"] = Int(dexInput.text!)
+        myCharacter.stats["con"] = Int(conInput.text!)
+        myCharacter.stats["int"] = Int(intInput.text!)
+        myCharacter.stats["wis"] = Int(wisInput.text!)
+        myCharacter.stats["cha"] = Int(chaInput.text!)
+    }
+    
+    @IBOutlet weak var strInput: UITextField!
+    
+    @IBOutlet weak var dexInput: UITextField!
+    
+    @IBOutlet weak var conInput: UITextField!
+
+    @IBOutlet weak var intInput: UITextField!
+    
+    @IBOutlet weak var wisInput: UITextField!
+    
+    @IBOutlet weak var chaInput: UITextField!
+    
     //PAGE 5
     
     //PAGE 6
@@ -122,6 +144,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var chaSave: UILabel!
     
     
+    @IBOutlet weak var strLabel: UILabel!
+    
+    @IBOutlet weak var dexLabel: UILabel!
+    
+    @IBOutlet weak var conLabel: UILabel!
+    
+    @IBOutlet weak var intLabel: UILabel!
+    
+    @IBOutlet weak var wisLabel: UILabel!
+    
+    @IBOutlet weak var chaLabel: UILabel!
     
     
     /*
@@ -159,6 +192,16 @@ class ViewController: UIViewController {
         //class and race
         self.sheetClass.text = myCharacter.Cclass + " - 0"
         self.sheetRace.text = myCharacter.race
+        
+        //stats
+        self.strLabel.text = String(myCharacter.stats["str"] ?? 0)
+        self.dexLabel.text = String(myCharacter.stats["dex"] ?? 0)
+        self.conLabel.text = String(myCharacter.stats["con"] ?? 0)
+        self.intLabel.text = String(myCharacter.stats["int"] ?? 0)
+        self.wisLabel.text = String(myCharacter.stats["wis"] ?? 0)
+        self.chaLabel.text = String(myCharacter.stats["cha"] ?? 0)
+        
+        
         
         //saving throws
         self.strSave.text = " "
