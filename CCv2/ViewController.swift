@@ -145,16 +145,21 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var strLabel: UILabel!
-    
     @IBOutlet weak var dexLabel: UILabel!
-    
     @IBOutlet weak var conLabel: UILabel!
-    
     @IBOutlet weak var intLabel: UILabel!
-    
     @IBOutlet weak var wisLabel: UILabel!
-    
     @IBOutlet weak var chaLabel: UILabel!
+
+    
+    @IBOutlet weak var strMod: UILabel!
+    @IBOutlet weak var dexMod: UILabel!
+    @IBOutlet weak var conMod: UILabel!
+    @IBOutlet weak var intMod: UILabel!
+    @IBOutlet weak var wisMod: UILabel!
+    @IBOutlet weak var chaMod: UILabel!
+    
+    
     
     
     /*
@@ -187,6 +192,11 @@ class ViewController: UIViewController {
         updateCharSheet()
     }
     
+    func calcModifier(x: Int) -> Int {
+        var result: Double = Double((x - 10) / 2)
+        result.round(.down)
+        return Int(result)
+    }
     
     func updateCharSheet() {
         //class and race
@@ -194,22 +204,29 @@ class ViewController: UIViewController {
         self.sheetRace.text = myCharacter.race
         
         //stats
-        self.strLabel.text = String(myCharacter.stats["str"] ?? 0)
-        self.dexLabel.text = String(myCharacter.stats["dex"] ?? 0)
-        self.conLabel.text = String(myCharacter.stats["con"] ?? 0)
-        self.intLabel.text = String(myCharacter.stats["int"] ?? 0)
-        self.wisLabel.text = String(myCharacter.stats["wis"] ?? 0)
-        self.chaLabel.text = String(myCharacter.stats["cha"] ?? 0)
+        let statNameArray: [String] = ["str", "dex", "con", "int", "wis", "cha"]
+        let statLabelNameArray: [UILabel] = [strLabel, dexLabel, conLabel, intLabel, wisLabel, chaLabel]
+        let statModNameArray: [UILabel] = [strMod, dexMod, conMod, intMod, wisMod, chaMod]
         
-        
+        for index in 0...statNameArray.count - 1 {
+            statLabelNameArray[index].text = String(myCharacter.stats[statNameArray[index]] ?? 0)
+            let x = calcModifier(x: myCharacter.stats[statNameArray[index]]!)
+            
+            if (x >= 0) {
+                statModNameArray[index].text = "+" + String(x)
+            } else{
+                statModNameArray[index].text = String(x)
+            }
+            
+        }
+       
         
         //saving throws
-        self.strSave.text = " "
-        self.dexSave.text = " "
-        self.conSave.text = " "
-        self.intSave.text = " "
-        self.wisSave.text = " "
-        self.chaSave.text = " "
+        let STNameArray: [UILabel] = [strSave, dexSave, intSave, wisSave, chaSave]
+        
+        for index in 0...STNameArray.count - 1 {
+            STNameArray[index].text = " "
+        }
         
         if myCharacter.Cclass == "Barbarian" {
             self.strSave.text = "X"
