@@ -159,7 +159,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var wisMod: UILabel!
     @IBOutlet weak var chaMod: UILabel!
     
-    
+    @IBOutlet weak var strST: UILabel!
+    @IBOutlet weak var dexST: UILabel!
+    @IBOutlet weak var conST: UILabel!
+    @IBOutlet weak var intST: UILabel!
+    @IBOutlet weak var wisST: UILabel!
+    @IBOutlet weak var chaST: UILabel!
     
     
     /*
@@ -187,20 +192,27 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sheetRace: UILabel!
     @IBOutlet weak var sheetClass: UILabel!
+    @IBOutlet weak var profBonus: UILabel!
+    
+    
     
     @IBAction func test(_ sender: Any) {
         updateCharSheet()
     }
     
     func calcModifier(x: Int) -> Int {
-        var result: Double = Double((x - 10) / 2)
+        var num = x
+        if num <= 9{
+            num -= 1
+        }
+        var result: Double = Double((num - 10) / 2)
         result.round(.down)
         return Int(result)
     }
     
     func updateCharSheet() {
         //class and race
-        self.sheetClass.text = myCharacter.Cclass + " - 0"
+        self.sheetClass.text = myCharacter.Cclass + " - " + String(myCharacter.level)
         self.sheetRace.text = myCharacter.race
         
         //stats
@@ -219,10 +231,31 @@ class ViewController: UIViewController {
             }
             
         }
+        
+        //proficience bonus
+        let switchLevel = myCharacter.level
+        switch switchLevel {
+        case 1..<5:
+            myCharacter.profBonus = 2
+        case 5..<9:
+            myCharacter.profBonus = 3
+        case 9..<13:
+            myCharacter.profBonus = 4
+        case 13..<17:
+            myCharacter.profBonus = 5
+        case 17..<21:
+            myCharacter.profBonus = 6
+        default:
+            myCharacter.profBonus = 0
+        }
+        
+        self.profBonus.text = "+" + String(myCharacter.profBonus)
        
         
         //saving throws
-        let STNameArray: [UILabel] = [strSave, dexSave, intSave, wisSave, chaSave]
+        let STNameArray: [UILabel] = [strSave, dexSave, conSave, intSave, wisSave, chaSave]
+        
+        let STNumberArray: [UILabel] = [strST, dexST, conST, intST, wisST, chaST]
         
         for index in 0...STNameArray.count - 1 {
             STNameArray[index].text = " "
@@ -265,6 +298,22 @@ class ViewController: UIViewController {
             self.intSave.text = "X"
             self.wisSave.text = "X"
         }
+        
+        for index in 0...STNumberArray.count - 1 {
+            
+            var x = calcModifier(x: myCharacter.stats[statNameArray[index]]!)
+            if STNameArray[index].text == "X" {
+                x += myCharacter.profBonus
+            }
+            
+            if (x >= 0) {
+                STNumberArray[index].text = "+" + String(x)
+            } else{
+                STNumberArray[index].text = String(x)
+            }
+        }
+        
+       
         
     }
    

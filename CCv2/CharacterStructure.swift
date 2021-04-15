@@ -11,6 +11,8 @@ class Character {
     var race: String = "nil"
     var background: String = "nil"
     var Cclass: String = "nil"
+    var profBonus: Int = 2
+    var level: Int = 1
     var stats = [
         "str" : 0,
         "dex" : 0,
