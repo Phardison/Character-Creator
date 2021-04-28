@@ -135,6 +135,56 @@ class ViewController: UIViewController {
     
     //PAGE 5
     
+    @IBOutlet weak var Acrobatics: UILabel!
+    @IBOutlet weak var AnimalHandling: UILabel!
+    @IBOutlet weak var Arcana: UILabel!
+    @IBOutlet weak var Athletics: UILabel!
+    @IBOutlet weak var Deception: UILabel!
+    @IBOutlet weak var History: UILabel!
+    @IBOutlet weak var Insight: UILabel!
+    @IBOutlet weak var Intimidation: UILabel!
+    @IBOutlet weak var Investigation: UILabel!
+    @IBOutlet weak var Medicine: UILabel!
+    @IBOutlet weak var Nature: UILabel!
+    @IBOutlet weak var Perception: UILabel!
+    @IBOutlet weak var Performance: UILabel!
+    @IBOutlet weak var Persuasion: UILabel!
+    @IBOutlet weak var Religion: UILabel!
+    @IBOutlet weak var SleightOfHand: UILabel!
+    @IBOutlet weak var Stealth: UILabel!
+    @IBOutlet weak var Survival: UILabel!
+    
+    
+    /*
+     Strength
+    Athletics
+    
+     Dexterity
+    Acrobatics
+    Sleight of Hand
+    Stealth
+    
+     Intelligence
+    Arcana
+    History
+    Investigation
+    Nature
+    Religion
+    
+     Wisdom
+    Animal Handling
+    Insight
+    Medicine
+    Perception
+    Survival
+    
+     Charisma
+    Deception
+    Intimidation
+    Performance
+    Persuasion
+    */
+ 
     //PAGE 6
     @IBOutlet weak var strSave: UILabel!
     @IBOutlet weak var dexSave: UILabel!
@@ -313,8 +363,12 @@ class ViewController: UIViewController {
             }
         }
         
-       
+        //Skills
+        let skillNameArray: [UILabel] = [Acrobatics, AnimalHandling, Arcana, Athletics, Deception, History, Insight, Intimidation, Investigation, Medicine, Nature, Perception, Performance, Persuasion, Religion, SleightOfHand, Stealth, Survival]
         
+        for index in 0...skillNameArray.count - 1 {
+            skillNameArray[index].text = " "
+        }
     }
    
     
