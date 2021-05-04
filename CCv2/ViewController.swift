@@ -155,6 +155,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var Survival: UILabel!
     
     
+    
+    @IBOutlet weak var AcrobaticsVal: UILabel!
+    @IBOutlet weak var AnimalHandlingVal: UILabel!
+    @IBOutlet weak var ArcanaVal: UILabel!
+    @IBOutlet weak var AthleticsVal: UILabel!
+    @IBOutlet weak var DeceptionVal: UILabel!
+    @IBOutlet weak var HistoryVal: UILabel!
+    @IBOutlet weak var InsightVal: UILabel!
+    @IBOutlet weak var IntimidationVal: UILabel!
+    @IBOutlet weak var InvestigationVal: UILabel!
+    @IBOutlet weak var MedicineVal: UILabel!
+    @IBOutlet weak var NatureVal: UILabel!
+    @IBOutlet weak var PerceptionVal: UILabel!
+    @IBOutlet weak var PerformanceVal: UILabel!
+    @IBOutlet weak var PersuasionVal: UILabel!
+    @IBOutlet weak var ReligionVal: UILabel!
+    @IBOutlet weak var SleightOfHandVal: UILabel!
+    @IBOutlet weak var StealthVal: UILabel!
+    @IBOutlet weak var SurvivalVal: UILabel!
+    
     /*
      Strength
     Athletics
@@ -311,6 +331,7 @@ class ViewController: UIViewController {
             STNameArray[index].text = " "
         }
         
+        //mark saving throws based on class
         if myCharacter.Cclass == "Barbarian" {
             self.strSave.text = "X"
             self.conSave.text = "X"
@@ -349,6 +370,7 @@ class ViewController: UIViewController {
             self.wisSave.text = "X"
         }
         
+        //add proficiency bonys to saving throws
         for index in 0...STNumberArray.count - 1 {
             
             var x = calcModifier(x: myCharacter.stats[statNameArray[index]]!)
@@ -366,9 +388,35 @@ class ViewController: UIViewController {
         //Skills
         let skillNameArray: [UILabel] = [Acrobatics, AnimalHandling, Arcana, Athletics, Deception, History, Insight, Intimidation, Investigation, Medicine, Nature, Perception, Performance, Persuasion, Religion, SleightOfHand, Stealth, Survival]
         
+        let skillValArray: [UILabel] = [AcrobaticsVal, AnimalHandlingVal, ArcanaVal, AthleticsVal, DeceptionVal, HistoryVal, InsightVal, IntimidationVal, InvestigationVal, MedicineVal, NatureVal, PerceptionVal, PerformanceVal, PersuasionVal, ReligionVal, SleightOfHandVal, StealthVal, SurvivalVal]
+        
+        let stringSkillNameArray: [String] = ["Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SleightOfHand", "Stealth", "Survival"]
+        
+        //set all blank
         for index in 0...skillNameArray.count - 1 {
             skillNameArray[index].text = " "
         }
+        myCharacter.skills.append("AnimalHandling")
+        myCharacter.skills.append("Persuasion")
+        
+        //mark proficient skills
+        for i in 0...myCharacter.skills.count - 1 {
+            for n in 0...skillNameArray.count - 1 {
+                if (myCharacter.skills[i] == stringSkillNameArray[n]) {
+                    skillNameArray[n].text = "X"
+                }
+            }
+        }
+        
+        //Add skill Values
+        for n in 0...skillValArray.count - 1 {
+            if (skillNameArray[n].text == "X") {
+                let val = Int(skillValArray[n].text) + myCharacter.profBonus
+                skillValArray[n].text = val
+            }
+        }
+        
+        
     }
    
     

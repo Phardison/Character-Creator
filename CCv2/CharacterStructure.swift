@@ -21,6 +21,7 @@ class Character {
         "wis" : 0,
         "cha" : 0
     ]
+    var skills = [String]()
    
 }
 
