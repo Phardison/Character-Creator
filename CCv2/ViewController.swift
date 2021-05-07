@@ -175,35 +175,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var StealthVal: UILabel!
     @IBOutlet weak var SurvivalVal: UILabel!
     
-    /*
-     Strength
-    Athletics
     
-     Dexterity
-    Acrobatics
-    Sleight of Hand
-    Stealth
-    
-     Intelligence
-    Arcana
-    History
-    Investigation
-    Nature
-    Religion
-    
-     Wisdom
-    Animal Handling
-    Insight
-    Medicine
-    Perception
-    Survival
-    
-     Charisma
-    Deception
-    Intimidation
-    Performance
-    Persuasion
-    */
  
     //PAGE 6
     @IBOutlet weak var strSave: UILabel!
@@ -409,10 +381,60 @@ class ViewController: UIViewController {
         }
         
         //Add skill Values
+        self.AcrobaticsVal.text = String(calcModifier(x: myCharacter.stats["dex"]!))
+        self.AnimalHandlingVal.text = String(calcModifier(x: myCharacter.stats["wis"]!))
+        self.ArcanaVal.text = String(calcModifier(x: myCharacter.stats["int"]!))
+        self.AthleticsVal.text = String(calcModifier(x: myCharacter.stats["str"]!))
+        self.DeceptionVal.text = String(calcModifier(x: myCharacter.stats["cha"]!))
+        self.HistoryVal.text = String(calcModifier(x: myCharacter.stats["int"]!))
+        self.InsightVal.text = String(calcModifier(x: myCharacter.stats["wis"]!))
+        self.IntimidationVal.text = String(calcModifier(x: myCharacter.stats["cha"]!))
+        self.InvestigationVal.text = String(calcModifier(x: myCharacter.stats["int"]!))
+        self.MedicineVal.text = String(calcModifier(x: myCharacter.stats["wis"]!))
+        self.NatureVal.text = String(calcModifier(x: myCharacter.stats["int"]!))
+        self.PerceptionVal.text = String(calcModifier(x: myCharacter.stats["wis"]!))
+        self.PerformanceVal.text = String(calcModifier(x: myCharacter.stats["cha"]!))
+        self.PersuasionVal.text = String(calcModifier(x: myCharacter.stats["cha"]!))
+        self.ReligionVal.text = String(calcModifier(x: myCharacter.stats["int"]!))
+        self.SleightOfHandVal.text = String(calcModifier(x: myCharacter.stats["dex"]!))
+        self.StealthVal.text = String(calcModifier(x: myCharacter.stats["dex"]!))
+        self.SurvivalVal.text = String(calcModifier(x: myCharacter.stats["wis"]!))
+        
+        /*
+         Strength
+        Athletics
+        
+         Dexterity
+        Acrobatics
+        Sleight of Hand
+        Stealth
+        
+         Intelligence
+        Arcana
+        History
+        Investigation
+        Nature
+        Religion
+        
+         Wisdom
+        Animal Handling
+        Insight
+        Medicine
+        Perception
+        Survival
+        
+         Charisma
+        Deception
+        Intimidation
+        Performance
+        Persuasion
+        */
+        
         for n in 0...skillValArray.count - 1 {
             if (skillNameArray[n].text == "X") {
-                let val = Int(skillValArray[n].text) + myCharacter.profBonus
-                skillValArray[n].text = val
+                var val: Int = Int(skillValArray[n].text!)!
+                val += Int(myCharacter.profBonus)
+                skillValArray[n].text = String(val)
             }
         }
         
