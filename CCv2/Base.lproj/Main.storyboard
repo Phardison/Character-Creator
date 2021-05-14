@@ -160,15 +160,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfA-MZ-DCX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfA-MZ-DCX">
                                 <rect key="frame" x="89" y="506" width="96" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8P-fS-fUz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8P-fS-fUz">
                                 <rect key="frame" x="89" y="402" width="96" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R92-Xa-33h">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R92-Xa-33h">
                                 <rect key="frame" x="89" y="298" width="96" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -302,14 +302,14 @@
                         <outlet property="chaInput" destination="ojG-mx-Mgx" id="Iao-hq-XqY"/>
                         <outlet property="conInput" destination="CbS-tq-jre" id="gpu-zF-w9M"/>
                         <outlet property="dexInput" destination="ZvU-26-oYm" id="TTn-Qa-VZV"/>
-                        <outlet property="image1" destination="Vg9-yu-uhe" id="ECz-od-vmq"/>
-                        <outlet property="image2" destination="R92-Xa-33h" id="KYF-Gg-NwM"/>
-                        <outlet property="image3" destination="i8P-fS-fUz" id="YTa-y8-Z9P"/>
-                        <outlet property="image4" destination="cfA-MZ-DCX" id="g6a-7k-75X"/>
                         <outlet property="intInput" destination="CUg-iz-833" id="H1p-0N-MPa"/>
                         <outlet property="strInput" destination="NKm-cQ-44y" id="4dh-Po-3rr"/>
                         <outlet property="totalLabel" destination="288-Jh-XFk" id="Sox-1h-Xdj"/>
                         <outlet property="wisInput" destination="gH9-70-5Mz" id="Yh7-tu-wEM"/>
+                        <outletCollection property="diceImage" destination="Vg9-yu-uhe" collectionClass="NSMutableArray" id="HAW-HZ-VZ5"/>
+                        <outletCollection property="diceImage" destination="R92-Xa-33h" collectionClass="NSMutableArray" id="HSc-df-AQZ"/>
+                        <outletCollection property="diceImage" destination="i8P-fS-fUz" collectionClass="NSMutableArray" id="GVB-5y-w24"/>
+                        <outletCollection property="diceImage" destination="cfA-MZ-DCX" collectionClass="NSMutableArray" id="8g2-go-z4K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wng-Zo-5bK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -331,6 +331,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="skills list" translatesAutoresizingMaskIntoConstraints="NO" id="Yp4-Cn-Ws6">
+                                <rect key="frame" x="426" y="200" width="240" height="588"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r2n-dr-OFu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -559,119 +563,119 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZi-os-ouh">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZi-os-ouh">
                                 <rect key="frame" x="145" y="478" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bg-jX-Zgs">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bg-jX-Zgs">
                                 <rect key="frame" x="145" y="495" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWj-z5-hW4">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWj-z5-hW4">
                                 <rect key="frame" x="145" y="512" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDA-zn-kF1">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDA-zn-kF1">
                                 <rect key="frame" x="145" y="529" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbq-bT-BdE">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbq-bT-BdE">
                                 <rect key="frame" x="145" y="546" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4b-Hb-uGa">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4b-Hb-uGa">
                                 <rect key="frame" x="145" y="562" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5A1-kY-dfU">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5A1-kY-dfU">
                                 <rect key="frame" x="145" y="580" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrC-Te-5B4">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrC-Te-5B4">
                                 <rect key="frame" x="145" y="614" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyo-A5-vo3">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyo-A5-vo3">
                                 <rect key="frame" x="145" y="597" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzJ-gH-WyZ">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzJ-gH-WyZ">
                                 <rect key="frame" x="145" y="631" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3D-YR-y31">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3D-YR-y31">
                                 <rect key="frame" x="145" y="648" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwi-hz-LSu">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwi-hz-LSu">
                                 <rect key="frame" x="145" y="665" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvg-nL-l53">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvg-nL-l53">
                                 <rect key="frame" x="145" y="682" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9f-kx-WS2">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9f-kx-WS2">
                                 <rect key="frame" x="145" y="699" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59B-4n-ya9">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="16" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59B-4n-ya9">
                                 <rect key="frame" x="145" y="716" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbF-ia-2Wc">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbF-ia-2Wc">
                                 <rect key="frame" x="145" y="733" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyC-vR-X6e">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyC-vR-X6e">
                                 <rect key="frame" x="145" y="461" width="14" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
@@ -809,41 +813,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="Acrobatics" destination="O6d-7D-xhh" id="jWF-aH-MWd"/>
                         <outlet property="AcrobaticsVal" destination="8Hb-8S-b4Z" id="Edt-mh-gpL"/>
-                        <outlet property="AnimalHandling" destination="SyC-vR-X6e" id="oJ7-Z1-Ry6"/>
                         <outlet property="AnimalHandlingVal" destination="4M2-kb-byn" id="ckh-7H-HfY"/>
-                        <outlet property="Arcana" destination="UZi-os-ouh" id="Onh-2k-XmR"/>
                         <outlet property="ArcanaVal" destination="eCa-MP-GKq" id="0vN-Ou-EBb"/>
-                        <outlet property="Athletics" destination="6bg-jX-Zgs" id="9aq-iF-oVD"/>
                         <outlet property="AthleticsVal" destination="ewH-3x-44q" id="dZd-Vf-aLX"/>
-                        <outlet property="Deception" destination="SWj-z5-hW4" id="YcP-wp-KIh"/>
                         <outlet property="DeceptionVal" destination="ayP-Bc-8wE" id="WNV-P9-tiF"/>
-                        <outlet property="History" destination="LDA-zn-kF1" id="QZK-Hn-Wh9"/>
                         <outlet property="HistoryVal" destination="0q2-iC-HOY" id="Yhk-z9-khA"/>
-                        <outlet property="Insight" destination="cbq-bT-BdE" id="FXc-Vm-O6o"/>
                         <outlet property="InsightVal" destination="c9F-jz-mZr" id="PLG-NX-LpD"/>
-                        <outlet property="Intimidation" destination="k4b-Hb-uGa" id="roN-PO-WFW"/>
                         <outlet property="IntimidationVal" destination="9di-ED-h9B" id="jKX-ja-xku"/>
-                        <outlet property="Investigation" destination="5A1-kY-dfU" id="8Tz-kz-9sA"/>
                         <outlet property="InvestigationVal" destination="Eda-MS-gq6" id="J3P-8O-JoY"/>
-                        <outlet property="Medicine" destination="nyo-A5-vo3" id="BUS-Hc-gtU"/>
                         <outlet property="MedicineVal" destination="BfU-34-ez8" id="R8m-8N-Fjb"/>
-                        <outlet property="Nature" destination="YrC-Te-5B4" id="3Kx-ew-dPb"/>
                         <outlet property="NatureVal" destination="tre-hA-fcj" id="w75-qu-sov"/>
-                        <outlet property="Perception" destination="WzJ-gH-WyZ" id="56u-ak-c6E"/>
                         <outlet property="PerceptionVal" destination="YgB-TL-dYE" id="iQK-pZ-ndq"/>
-                        <outlet property="Performance" destination="S3D-YR-y31" id="J4E-Er-hAO"/>
                         <outlet property="PerformanceVal" destination="3HB-v6-Woh" id="coh-yP-ePY"/>
-                        <outlet property="Persuasion" destination="Qwi-hz-LSu" id="gjA-vJ-Gp6"/>
                         <outlet property="PersuasionVal" destination="gNC-f4-HlJ" id="LTf-6N-VMW"/>
-                        <outlet property="Religion" destination="Gvg-nL-l53" id="Xqf-Bb-VbK"/>
                         <outlet property="ReligionVal" destination="aP2-GT-HN5" id="AaX-Pw-SNC"/>
-                        <outlet property="SleightOfHand" destination="n9f-kx-WS2" id="xUe-Ow-9Gd"/>
                         <outlet property="SleightOfHandVal" destination="Gbi-i6-1Cd" id="lTK-Lm-Rkb"/>
-                        <outlet property="Stealth" destination="59B-4n-ya9" id="bag-XQ-PwH"/>
                         <outlet property="StealthVal" destination="Dhx-Um-pul" id="ezg-cX-0yR"/>
-                        <outlet property="Survival" destination="QbF-ia-2Wc" id="Jhq-K1-Tia"/>
                         <outlet property="SurvivalVal" destination="CKj-se-rHw" id="0iq-G6-aLe"/>
                         <outlet property="chaLabel" destination="xZF-bY-aMr" id="l1e-61-ggP"/>
                         <outlet property="chaMod" destination="01A-i1-r1h" id="lgb-tm-WKm"/>
@@ -872,6 +858,24 @@
                         <outlet property="wisMod" destination="ZIG-xz-m97" id="q22-Ky-qHa"/>
                         <outlet property="wisST" destination="3Zk-Z4-BIL" id="ad8-PY-fkh"/>
                         <outlet property="wisSave" destination="tK1-4p-HlX" id="kst-7i-ibN"/>
+                        <outletCollection property="skills" destination="O6d-7D-xhh" collectionClass="NSMutableArray" id="Mrr-LA-W0g"/>
+                        <outletCollection property="skills" destination="SyC-vR-X6e" collectionClass="NSMutableArray" id="e8u-AP-Tia"/>
+                        <outletCollection property="skills" destination="UZi-os-ouh" collectionClass="NSMutableArray" id="Ivm-e2-HG0"/>
+                        <outletCollection property="skills" destination="6bg-jX-Zgs" collectionClass="NSMutableArray" id="Zff-ZW-hUZ"/>
+                        <outletCollection property="skills" destination="SWj-z5-hW4" collectionClass="NSMutableArray" id="RjY-wt-6ng"/>
+                        <outletCollection property="skills" destination="LDA-zn-kF1" collectionClass="NSMutableArray" id="7Vi-df-59Z"/>
+                        <outletCollection property="skills" destination="cbq-bT-BdE" collectionClass="NSMutableArray" id="44I-ku-9i2"/>
+                        <outletCollection property="skills" destination="k4b-Hb-uGa" collectionClass="NSMutableArray" id="nPR-j3-uZq"/>
+                        <outletCollection property="skills" destination="5A1-kY-dfU" collectionClass="NSMutableArray" id="qZ9-wA-VRn"/>
+                        <outletCollection property="skills" destination="nyo-A5-vo3" collectionClass="NSMutableArray" id="93u-Sh-eBH"/>
+                        <outletCollection property="skills" destination="YrC-Te-5B4" collectionClass="NSMutableArray" id="KJO-lY-vEf"/>
+                        <outletCollection property="skills" destination="WzJ-gH-WyZ" collectionClass="NSMutableArray" id="BZE-mK-B3s"/>
+                        <outletCollection property="skills" destination="S3D-YR-y31" collectionClass="NSMutableArray" id="zkx-jw-rGd"/>
+                        <outletCollection property="skills" destination="Qwi-hz-LSu" collectionClass="NSMutableArray" id="fQ1-mN-nnX"/>
+                        <outletCollection property="skills" destination="Gvg-nL-l53" collectionClass="NSMutableArray" id="qeJ-zv-wLu"/>
+                        <outletCollection property="skills" destination="n9f-kx-WS2" collectionClass="NSMutableArray" id="wTP-qc-sYQ"/>
+                        <outletCollection property="skills" destination="59B-4n-ya9" collectionClass="NSMutableArray" id="NFw-qY-4NJ"/>
+                        <outletCollection property="skills" destination="QbF-ia-2Wc" collectionClass="NSMutableArray" id="taw-W7-mNO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YO4-Xg-eYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -881,6 +885,7 @@
     </scenes>
     <resources>
         <image name="characterSheet" width="612" height="792"/>
+        <image name="skills list" width="142" height="486"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

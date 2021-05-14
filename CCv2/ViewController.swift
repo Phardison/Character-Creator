@@ -85,26 +85,19 @@ class ViewController: UIViewController {
 
     //PAGE 4
     
-    @IBOutlet weak var image1: UIImageView!
-    @IBOutlet weak var image2: UIImageView!
-    @IBOutlet weak var image3: UIImageView!
-    @IBOutlet weak var image4: UIImageView!
     
+    @IBOutlet var diceImage: [UIImageView]!
     
     @IBOutlet weak var totalLabel: UILabel!
     
     
-    
-    
-    
-    
     @IBAction func statRollButton(_ sender: Any) {
         let resultArray: [Int] = [rollD1(),rollD1(),rollD1(),rollD1()]
-                                  
-        self.image1.image = UIImage(named:"d6_\(resultArray[0])")
-        self.image2.image = UIImage(named:"d6_\(resultArray[1])")
-        self.image3.image = UIImage(named:"d6_\(resultArray[2])")
-        self.image4.image = UIImage(named:"d6_\(resultArray[3])")
+           
+        for x in 0...3{
+            self.diceImage[x].image = UIImage(named:"d6_\(resultArray[x])")
+        }
+        
         
         let sumTop: Int =
             resultArray.reduce(0, +)
@@ -134,26 +127,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var chaInput: UITextField!
     
     //PAGE 5
-    
-    @IBOutlet weak var Acrobatics: UILabel!
-    @IBOutlet weak var AnimalHandling: UILabel!
-    @IBOutlet weak var Arcana: UILabel!
-    @IBOutlet weak var Athletics: UILabel!
-    @IBOutlet weak var Deception: UILabel!
-    @IBOutlet weak var History: UILabel!
-    @IBOutlet weak var Insight: UILabel!
-    @IBOutlet weak var Intimidation: UILabel!
-    @IBOutlet weak var Investigation: UILabel!
-    @IBOutlet weak var Medicine: UILabel!
-    @IBOutlet weak var Nature: UILabel!
-    @IBOutlet weak var Perception: UILabel!
-    @IBOutlet weak var Performance: UILabel!
-    @IBOutlet weak var Persuasion: UILabel!
-    @IBOutlet weak var Religion: UILabel!
-    @IBOutlet weak var SleightOfHand: UILabel!
-    @IBOutlet weak var Stealth: UILabel!
-    @IBOutlet weak var Survival: UILabel!
-    
+   
+    @IBOutlet var skills: [UILabel]!
     
     
     @IBOutlet weak var AcrobaticsVal: UILabel!
@@ -175,8 +150,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var StealthVal: UILabel!
     @IBOutlet weak var SurvivalVal: UILabel!
     
+    //PAGE 5
     
- 
+    
     //PAGE 6
     @IBOutlet weak var strSave: UILabel!
     @IBOutlet weak var dexSave: UILabel!
@@ -358,24 +334,24 @@ class ViewController: UIViewController {
         }
         
         //Skills
-        let skillNameArray: [UILabel] = [Acrobatics, AnimalHandling, Arcana, Athletics, Deception, History, Insight, Intimidation, Investigation, Medicine, Nature, Perception, Performance, Persuasion, Religion, SleightOfHand, Stealth, Survival]
-        
+
         let skillValArray: [UILabel] = [AcrobaticsVal, AnimalHandlingVal, ArcanaVal, AthleticsVal, DeceptionVal, HistoryVal, InsightVal, IntimidationVal, InvestigationVal, MedicineVal, NatureVal, PerceptionVal, PerformanceVal, PersuasionVal, ReligionVal, SleightOfHandVal, StealthVal, SurvivalVal]
         
         let stringSkillNameArray: [String] = ["Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SleightOfHand", "Stealth", "Survival"]
         
         //set all blank
-        for index in 0...skillNameArray.count - 1 {
-            skillNameArray[index].text = " "
+        for index in 0...skills.count - 1 {
+            skills[index].text = " "
         }
+        
         myCharacter.skills.append("AnimalHandling")
         myCharacter.skills.append("Persuasion")
         
         //mark proficient skills
         for i in 0...myCharacter.skills.count - 1 {
-            for n in 0...skillNameArray.count - 1 {
+            for n in 0...skills.count - 1 {
                 if (myCharacter.skills[i] == stringSkillNameArray[n]) {
-                    skillNameArray[n].text = "X"
+                    skills[n].text = "X"
                 }
             }
         }
@@ -431,7 +407,7 @@ class ViewController: UIViewController {
         */
         
         for n in 0...skillValArray.count - 1 {
-            if (skillNameArray[n].text == "X") {
+            if (skills[n].text == "X") {
                 var val: Int = Int(skillValArray[n].text!)!
                 val += Int(myCharacter.profBonus)
                 skillValArray[n].text = String(val)
